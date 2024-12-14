@@ -3,16 +3,16 @@
 # | '_ \| | |/ / |/ / _` | | |_| '__/ _` | '_ ` _ \ / _ \ \ /\ / / _ \| '__| |/ /
 # | | | | |   <|   < (_| | |  _| | | (_| | | | | | |  __/\ V  V / (_) | |  |   < 
 # |_| |_|_|_|\_\_|\_\__,_| |_| |_|  \__,_|_| |_| |_|\___| \_/\_/ \___/|_|  |_|\_\
-#                                                                               
-# is injected 
+#                                                                                
 # description: change your version to 9.9.9
 # version: 1.0.0
 # author: hikka framework
 
-__version__ = (9, 9, 9)
+from . import database
+
+__version__ = (, 9, 9)
 
 import os
-
 import git
 
 try:
