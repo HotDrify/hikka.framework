@@ -8,7 +8,7 @@
 # version: 1.0.0
 # author: hikka framework
 
-__version__ = (, 9, 9)
+__version__ = (9, 9, 9)
 
 import os
 import git
