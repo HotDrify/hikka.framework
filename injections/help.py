@@ -249,7 +249,11 @@ class Help(loader.Module):
 
         hidden = self.get("hide", [])
 
-        reply = self.config["title"].format(
+        reply = (
+            self.config["title"]
+            if self.config["title"]
+            else
+            self.strings("all_header").format(
             len(self.allmodules.modules) + len(self.allmodules.dragon_modules),
             (
                 0
@@ -263,6 +267,7 @@ class Help(loader.Module):
                 )
             ),
         )
+        
         shown_warn = False
 
         plain_ = []
