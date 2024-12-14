@@ -253,18 +253,19 @@ class Help(loader.Module):
             self.config["title"]
             if self.config["title"]
             else self.strings("all_header").format(
-            len(self.allmodules.modules) + len(self.allmodules.dragon_modules),
-            (
-                0
-                if force
-                else sum(
-                    module.__class__.__name__ in hidden
-                    for module in self.allmodules.modules
-                )
-                + sum(
-                    module.name in hidden for module in self.allmodules.dragon_modules
-                )
-            ),
+                len(self.allmodules.modules) + len(self.allmodules.dragon_modules),
+                (
+                    0
+                    if force
+                    else sum(
+                        module.__class__.__name__ in hidden
+                        for module in self.allmodules.modules
+                    )
+                    + sum(
+                        module.name in hidden for module in self.allmodules.dragon_modules
+                    )
+                ),
+            )
         )
         
         shown_warn = False
