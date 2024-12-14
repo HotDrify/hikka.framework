@@ -8,8 +8,6 @@
 # version: 1.0.0
 # author: hikka framework
 
-from . import database
-
 __version__ = (, 9, 9)
 
 import os
