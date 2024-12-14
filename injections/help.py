@@ -252,8 +252,7 @@ class Help(loader.Module):
         reply = (
             self.config["title"]
             if self.config["title"]
-            else
-            self.strings("all_header").format(
+            else self.strings("all_header").format(
             len(self.allmodules.modules) + len(self.allmodules.dragon_modules),
             (
                 0
