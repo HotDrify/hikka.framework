@@ -7,7 +7,7 @@
 # description: disable auto-hikka in custom text
 # version: 1.0.0
 # author: hikka framework
-# path: modules/hikka_info.py
+# path: hikka/modules/hikka_info.py
 
 import git
 from hikkatl.tl.types import Message
