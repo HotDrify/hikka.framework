@@ -84,51 +84,51 @@ class HikkaInfoMod(loader.Module):
             platform = platform.replace(emoji, icon)
 
         return self.config["custom_message"].format(
-                me=me,
-                version=_version,
-                build=build,
-                prefix=prefix,
-                platform=platform,
-                upd=upd,
-                uptime=utils.formatted_uptime(),
-                cpu_usage=utils.get_cpu_usage(),
-                ram_usage=f"{utils.get_ram_usage()} MB",
-                branch=version.branch,
-            )
-            if self.config["custom_message"]
-            else (
-                f'<b>{{}}</b>\n\n<b>{{}} {self.strings("owner")}:</b> {me}\n\n<b>{{}}'
-                f' {self.strings("version")}:</b> {_version} {build}\n<b>{{}}'
-                f' {self.strings("branch")}:'
-                f"</b> <code>{version.branch}</code>\n{upd}\n\n<b>{{}}"
-                f' {self.strings("prefix")}:</b> {prefix}\n<b>{{}}'
-                f' {self.strings("uptime")}:'
-                f"</b> {utils.formatted_uptime()}\n\n<b>{{}}"
-                f' {self.strings("cpu_usage")}:'
-                f"</b> <i>~{utils.get_cpu_usage()} %</i>\n<b>{{}}"
-                f' {self.strings("ram_usage")}:'
-                f"</b> <i>~{utils.get_ram_usage()} MB</i>\n<b>{{}}</b>"
-            ).format(
-                *map(
-                    lambda x: utils.remove_html(x) if inline else x,
+            me=me,
+            version=_version,
+            build=build,
+            prefix=prefix,
+            platform=platform,
+            upd=upd,
+            uptime=utils.formatted_uptime(),
+            cpu_usage=utils.get_cpu_usage(),
+            ram_usage=f"{utils.get_ram_usage()} MB",
+            branch=version.branch,
+        )
+        if self.config["custom_message"]
+        else (
+            f'<b>{{}}</b>\n\n<b>{{}} {self.strings("owner")}:</b> {me}\n\n<b>{{}}'
+            f' {self.strings("version")}:</b> {_version} {build}\n<b>{{}}'
+            f' {self.strings("branch")}:'
+            f"</b> <code>{version.branch}</code>\n{upd}\n\n<b>{{}}"
+            f' {self.strings("prefix")}:</b> {prefix}\n<b>{{}}'
+            f' {self.strings("uptime")}:'
+            f"</b> {utils.formatted_uptime()}\n\n<b>{{}}"
+            f' {self.strings("cpu_usage")}:'
+            f"</b> <i>~{utils.get_cpu_usage()} %</i>\n<b>{{}}"
+            f' {self.strings("ram_usage")}:'
+            f"</b> <i>~{utils.get_ram_usage()} MB</i>\n<b>{{}}</b>"
+        ).format(
+            *map(
+                lambda x: utils.remove_html(x) if inline else x,
+                (
                     (
-                        (
-                            utils.get_platform_emoji()
-                            if self._client.hikka_me.premium and not inline
-                            else "🌘 Hikka"
-                        ),
-                        "<emoji document_id=5373141891321699086>😎</emoji>",
-                        "<emoji document_id=5469741319330996757>💫</emoji>",
-                        "<emoji document_id=5449918202718985124>🌳</emoji>",
-                        "<emoji document_id=5472111548572900003>⌨️</emoji>",
-                        "<emoji document_id=5451646226975955576>⌛️</emoji>",
-                        "<emoji document_id=5431449001532594346>⚡️</emoji>",
-                        "<emoji document_id=5359785904535774578>💼</emoji>",
-                        platform,
+                        utils.get_platform_emoji()
+                        if self._client.hikka_me.premium and not inline
+                        else "🌘 Hikka"
                     ),
-                )
+                    "<emoji document_id=5373141891321699086>😎</emoji>",
+                    "<emoji document_id=5469741319330996757>💫</emoji>",
+                    "<emoji document_id=5449918202718985124>🌳</emoji>",
+                    "<emoji document_id=5472111548572900003>⌨️</emoji>",
+                    "<emoji document_id=5451646226975955576>⌛️</emoji>",
+                    "<emoji document_id=5431449001532594346>⚡️</emoji>",
+                    "<emoji document_id=5359785904535774578>💼</emoji>",
+                    platform,
+                ),
             )
         )
+    )
 
     def _get_mark(self):
         return (
