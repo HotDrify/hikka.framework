@@ -5,7 +5,7 @@
 # |_| |_|_|_|\_\_|\_\__,_| |_| |_|  \__,_|_| |_| |_|\___| \_/\_/ \___/|_|  |_|\_\
 #                                                                                
 # description: disable auto "--no-web" parameter.
-# version: 1.0.0
+# version: 1.0.1
 # author: hikka framework
 # path: ./hikka/main.py
 
