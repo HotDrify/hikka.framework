@@ -225,7 +225,7 @@ def parse_arguments() -> dict:
     )
     parser.add_argument("--phone", "-p", action="append")
     parser.add_argument("--no-web", dest="disable_web", action="store_true",
-        default=False)
+        default=True)
     parser.add_argument(
         "--qr-login",
         dest="qr_login",
