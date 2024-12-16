@@ -224,7 +224,8 @@ def parse_arguments() -> dict:
         type=int,
     )
     parser.add_argument("--phone", "-p", action="append")
-    parser.add_argument("--no-web", dest="disable_web", action="store_true")
+    parser.add_argument("--no-web", dest="disable_web", action="store_true",
+        default=False)
     parser.add_argument(
         "--qr-login",
         dest="qr_login",
@@ -426,7 +427,7 @@ class Hikka:
         """Initialize web"""
         if (
             not web_available
-            or getattr(self.arguments, "disable_web", True)
+            or getattr(self.arguments, "disable_web", False)
             or IS_TERMUX
         ):
             self.web = None
