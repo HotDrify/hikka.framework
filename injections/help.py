@@ -34,7 +34,8 @@ class Help(loader.Module):
             loader.ConfigValue(
                 "title",
                 None,
-                lambda: "Help title text"
+                lambda: "Help title text",
+                validator=loader.validators.String(),
             ),
             loader.ConfigValue(
                 "core_emoji",
