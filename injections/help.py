@@ -33,7 +33,7 @@ class Help(loader.Module):
         self.config = loader.ModuleConfig(
             loader.ConfigValue(
                 "title",
-                None,
+                "",
                 lambda: "Help title text",
                 validator=loader.validators.String(),
             ),
